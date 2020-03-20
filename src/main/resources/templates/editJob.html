@@ -1,41 +1,80 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Recruit Agency App</title>
+<title>Edit Job - Job Good, Recruit Agency App</title>
 </head>
-<body>
-            <h1>Edit Online job Form</h1>
-<form th:object="${job}" th:action="@{/job/edit/{id}(id=${job.jobId})}" th:method="post">  
-            <table>  
-                <tr>  
-                    <td><label for="jobId">job Id</label></td>  
-                    <td><input type="text" name="jobId" th:field="*{jobId}" disabled /></td>  
-                </tr>
-                <tr>  
-                    <td><label for="jobCode">Job Code</label></td>  
-                    <td><input type="text" name="jobCode" th:field="*{jobCode}"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="jobName">Job Name</label></td>  
-                    <td><input type="text" name="jobName"  th:field="*{jobName}"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="jobDesc">Job Description</label></td>  
-                    <td><input type="text" name="jobDesc"  th:field="*{jobDesc}"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="pubDate">Publish Date</label></td>  
-                    <td><input type="text" name="pubDate"  th:field="*{pubDate}"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="numVacancy">Number of Vacancy</label></td>  
-                    <td><input type="number" name="numVacancy" th:field="*{numVacancy}"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><input type="submit" value="Edit Job"></input></td>  
-                </tr>  
-            </table>  
-        </form>  
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous" />
+<body class="container-sm">
+	<!-- https://getbootstrap.com/docs/4.4/components/navbar/ -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Job Good</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/">Home <span
+						class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#"
+					th:href="jobs">Job List</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="@{/addJob}">Add Job</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<h2>Edit Job</h2>
+
+		<form th:object="${job}"
+			th:action="@{/job/edit/{id}(id=${job.jobId})}" th:method="post">
+			<div class="form-group">
+				<label for="jobId">Job Id</label> <input type="text"
+					class="form-control" id="jobId" name="jobId" th:field="*{jobId}"
+					disabled>
+			</div>
+			<div class="form-group">
+				<label for="jobCode">Job Code</label> <input type="text"
+					class="form-control" id="jobCode" name="jobCode"
+					th:field="*{jobCode}" required>
+			</div>
+			<div class="form-group">
+				<label for="jobName">Job Name</label> <input type="text"
+					class="form-control" id="jobName" name="jobName"
+					th:field="*{jobName}" required>
+			</div>
+			<div class="form-group">
+				<label for="jobDesc">Job Description</label> <input type="text"
+					class="form-control" id="jobDesc" name="jobDesc"
+					th:field="*{jobDesc}" required>
+			</div>
+			<div class="form-group">
+				<label for="pubDate">Publish Date</label> <input type="text"
+					class="form-control" id="pubDate" name="pubDate"
+					th:field="*{pubDate}" required>
+			</div>
+			<div class="form-group">
+				<label for="numVacancy">Number of Vacancy</label> <input
+					type="number" class="form-control" min="1" id="numVacancy"
+					th:field="*{numVacancy}" name="numVacancy">
+			</div>
+			<input type="submit" class="btn btn-primary" value="Edit Job" />
+
+
+		</form>
+	</div>
+
+
+
+
 </body>
 </html>

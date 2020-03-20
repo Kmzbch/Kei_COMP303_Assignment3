@@ -3,14 +3,45 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Recruit Agency App</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
 </head>
 <body>
-	<p>
-		<a href="#" th:href="addJob">Add Job</a>
-	</p>
-	<p>
-		<a href="#" th:href="jobs">View JobList</a>
-	</p>
+	<!-- https://getbootstrap.com/docs/4.4/components/navbar/ -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Job Good</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active"><a class="nav-link" href="/">Home
+						<span class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="jobs">Job List</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="addJob">Add Job</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<h1 class="display-4">Find your dream job!</h1>
+		<p class="lead">Job Good - The best job posting website in Canada</p>
+		<hr class="my-4">
+		<p>Job Good is the best job posting website in Canada.</p>
+		<a class="btn btn-primary btn-lg" href="#" th:href="jobs">View Job
+			List</a>
+	</div>
+
+
 
 </body>
 </html>

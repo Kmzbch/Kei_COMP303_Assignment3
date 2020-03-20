@@ -2,41 +2,70 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Recruit Agency App</title>
+<title>Add New Job - Job Good, Recruit Agency App</title>
 </head>
-<body>
-<form action="job/add" method="post">  
-        	<h1>Fill Online job Form</h1>
-            <table>  
-                <tr>  
-                    <td><label for="jobId">job Id</label></td>  
-                    <td><input type="text" name="jobId"></input></td>  
-                </tr>
-                <tr>  
-                    <td><label for="jobCode">Job Code</label></td>  
-                    <td><input type="text" name="jobCode"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="jobName">Job Name</label></td>  
-                    <td><input type="text" name="jobName"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="jobDesc">Job Description</label></td>  
-                    <td><input type="text" name="jobDesc"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="pubDate">Publish Date</label></td>  
-                    <td><input type="text" name="pubDate"></input></td>  
-                </tr>  
-                <tr>  
-                    <td><label for="numVacancy">Number of Vacancy</label></td>  
-                    <td><input type="number" name="numVacancy"></input></td>  
-                </tr>  
-                <tr>  
-                    <td></td>  
-                    <td><input type="submit" value="Add Job"></input></td>  
-                </tr>  
-            </table>  
-        </form>  
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous" />
+<body class="container-sm">
+	<!-- https://getbootstrap.com/docs/4.4/components/navbar/ -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="#">Job Good</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item"><a class="nav-link" href="/">Home <span
+						class="sr-only">(current)</span>
+				</a></li>
+				<li class="nav-item"><a class="nav-link" href="#"
+					th:href="jobs">Job List</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#"
+					th:href="addJob">Add Job</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="container-fluid">
+	<h2>Add New Job</h2>
+    <form action="job/add" method="post">
+        <div class="form-group">
+            <label for="jobId">Job Id</label> <input type="text"
+                class="form-control" id="jobId" name="jobId" required>
+        </div>
+        <div class="form-group">
+            <label for="jobCode">Job Code</label> <input type="text"
+                class="form-control" id="jobCode" name="jobCode"  required>
+        </div>
+        <div class="form-group">
+            <label for="jobName">Job Name</label> <input type="text"
+                class="form-control" id="jobName" name="jobName" required>
+        </div>
+        <div class="form-group">
+            <label for="jobDesc">Job Description</label> <input type="text"
+                class="form-control" id="jobDesc" name="jobDesc" required>
+        </div>
+        <div class="form-group">
+            <label for="pubDate">Publish Date</label> <input type="text"
+                class="form-control" id="pubDate" name="pubDate" required>
+        </div>
+        <div class="form-group">
+            <label for="numVacancy">Number of Vacancy</label> <input
+                type="number" class="form-control" min="1" id="numVacancy" name="numVacancy">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Add Job"/>
+
+
+    </form>
+	</div>
+
+
+
+
 </body>
 </html>

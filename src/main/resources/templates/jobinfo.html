@@ -2,32 +2,72 @@
 <html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Job List - Job Good, Recruit Agency App</title>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous">
+
 </head>
 <body>
-<table border="1">
-		<tr>
-			<th>Job Id</th>
-			<th>Job Code</th>
-            <th>Job Name</th>
-            <th>Job Description</th>
-            <th>Date Published</th>
-            <th>Number of Vacancy</th>
-            <th>Edit</th>
-            <th>Delete</th>
-		</tr>
-		<tr th:each="job : ${jobList}">
-			<td th:text="${job.jobId}">Job Id</td>
-			<td th:text="${job.jobCode}">Job Code</td>
+    <!-- https://getbootstrap.com/docs/4.4/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Job Good</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                </a></li>
+                <li class="nav-item active"><a class="nav-link" href="#"
+                    th:href="jobs">Job List</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"
+                    th:href="addJob">Add Job</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div  class="container-fluid">
+<h2>Job List</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+                <th scope="col">Job Id</th>
+            <th scope="col">Job Code</th>
+            <th scope="col">Job Name</th>
+            <th scope="col">Job Description</th>
+            <th scope="col">Date Published</th>
+            <th scope="col">Number of Vacancy</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+    
+    </tr>
+  </thead>
+  <tbody>
+        <tr scope="row" th:each="job : ${jobList}">
+            <td th:text="${job.jobId}">Job Id</td>
+            <td th:text="${job.jobCode}">Job Code</td>
             <td th:text="${job.jobName}">Job Name</td>
             <td th:text="${job.jobDesc}">Job Description</td>
-			<td th:text="${job.pubDate}">Date Published</td>
+            <td th:text="${job.pubDate}">Date Published</td>
             <td th:text="${job.numVacancy}">Number of Vacancy</td>
             <td><a th:href="@{'/job/edit/' + ${job.jobId}}">Edit</a></td>
             <td><a th:href="@{'/job/delete/' + ${job.jobId}}">Delete</a></td>
-		</tr>
-	</table>
-    <strong><a href="/">Go back</a></strong>
+        </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
 
 </body>
 </html>
