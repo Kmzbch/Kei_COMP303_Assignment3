@@ -34,6 +34,9 @@ public class JobController {
         mv.setViewName("jobinfo");
         mv.addObject("jobList", jobService.getJobs());
         
+        // set page title(for thymeleaf demo)
+        mv.addObject("title", "Job List");
+        
         return mv;
     }
     
