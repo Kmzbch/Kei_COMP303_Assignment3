@@ -1,8 +1,12 @@
-package com.spring.rest;
-
-import java.util.Date;
+package com.spring.rest.models;
 
 import org.springframework.stereotype.Component;
+
+/**
+ * Project: Recruitement Agency App Version: 1.0 Author: Kei
+ * Mizubuchi(300936630) Date: March 22th, 2020
+ * 
+ */
 
 @Component
 public class Job {
@@ -11,12 +15,21 @@ public class Job {
     private String jobCode;
     private String jobName;
     private String jobDesc;
-    private Date pubDate;
+    private String pubDate;
     private int numVacancy;
     
-    // constructor
+    // constructors
     public Job() {
         
+    }
+    
+    public Job(int jobId, String jobCode, String jobName, String jobDesc, String pubDate, int numVacancy) {
+        this.jobId = jobId;
+        this.jobCode = jobCode;
+        this.jobName = jobName;
+        this.jobDesc = jobDesc;
+        this.pubDate = pubDate;
+        this.numVacancy = numVacancy;
     }
     
     // getter for jobId
@@ -60,12 +73,12 @@ public class Job {
     }
     
     // getter for pubDate
-    public Date getPubDate() {
+    public String getPubDate() {
         return pubDate;
     }
     
     // setter for pubDate
-    public void setPubDate(Date pubDate) {
+    public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
     

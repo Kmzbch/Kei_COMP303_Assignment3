@@ -1,6 +1,12 @@
-package com.spring.rest;
+package com.spring.rest.models;
 
 import org.springframework.stereotype.Component;
+
+/**
+ * Project: Recruitement Agency App Version: 1.0 Author: Kei
+ * Mizubuchi(300936630) Date: March 22th, 2020
+ * 
+ */
 
 @Component
 public class Organization {
@@ -15,7 +21,18 @@ public class Organization {
     
     // constructor
     public Organization() {
-        super();
+        
+    }
+    
+    public Organization(int orgId, String orgName, String address, String postalCode, String phoneNo, String email,
+            String website) {
+        this.orgId = orgId;
+        this.orgName = orgName;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.phoneNo = phoneNo;
+        this.email = email;
+        this.website = website;
     }
     
     // getter for orgId;

@@ -1,6 +1,12 @@
-package com.spring.rest;
+package com.spring.rest.models;
 
 import org.springframework.stereotype.Component;
+
+/**
+ * Project: Recruitement Agency App Version: 1.0 Author: Kei
+ * Mizubuchi(300936630) Date: March 22th, 2020
+ * 
+ */
 
 @Component
 public class Category {
@@ -10,19 +16,24 @@ public class Category {
     private String catName;
     private String catDesc;
     
-    // constructor
+    // constructors
     public Category() {
-        super();
+        
+    }
+    
+    public Category(int jobCatId, String catCode, String catName, String catDec) {
+        this.jobCatId = jobCatId;
+        this.catCode = catCode;
+        this.catName = catName;
+        this.catDesc = catDesc;
     }
     
     // getter for jobCatId
-    
     public int getJobCatId() {
         return jobCatId;
     }
     
     // setter for jobCatId
-    
     public void setJobCatId(int jobCatId) {
         this.jobCatId = jobCatId;
     }

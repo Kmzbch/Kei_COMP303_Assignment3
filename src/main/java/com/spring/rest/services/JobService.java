@@ -1,12 +1,21 @@
-package com.spring.rest;
+package com.spring.rest.services;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.rest.models.Job;
+
+/**
+ * Project: Recruitement Agency App Version: 1.0 Author: Kei
+ * Mizubuchi(300936630) Date: March 22th, 2020
+ * 
+ */
+
 @Service
 public class JobService {
+    
     // mock job repository
     Map<Integer, Job> jobRepository = new HashMap<>();
     

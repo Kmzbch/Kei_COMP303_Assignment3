@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Recruit Agency App</title>
+</head>
+<body>
+            <h1>Edit Online job Form</h1>
+<form th:object="${job}" th:action="@{/job/edit/{id}(id=${job.jobId})}" th:method="post">  
+            <table>  
+                <tr>  
+                    <td><label for="jobId">job Id</label></td>  
+                    <td><input type="text" name="jobId" th:field="*{jobId}" disabled /></td>  
+                </tr>
+                <tr>  
+                    <td><label for="jobCode">Job Code</label></td>  
+                    <td><input type="text" name="jobCode" th:field="*{jobCode}"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="jobName">Job Name</label></td>  
+                    <td><input type="text" name="jobName"  th:field="*{jobName}"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="jobDesc">Job Description</label></td>  
+                    <td><input type="text" name="jobDesc"  th:field="*{jobDesc}"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="pubDate">Publish Date</label></td>  
+                    <td><input type="text" name="pubDate"  th:field="*{pubDate}"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><label for="numVacancy">Number of Vacancy</label></td>  
+                    <td><input type="number" name="numVacancy" th:field="*{numVacancy}"></input></td>  
+                </tr>  
+                <tr>  
+                    <td><input type="submit" value="Edit Job"></input></td>  
+                </tr>  
+            </table>  
+        </form>  
+</body>
+</html>
