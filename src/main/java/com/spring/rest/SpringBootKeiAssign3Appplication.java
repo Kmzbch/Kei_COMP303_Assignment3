@@ -41,12 +41,12 @@ public class SpringBootKeiAssign3Appplication {
     public ApplicationRunner organizationsInitializer(OrganizationService organizationService) {
         return args -> {
             // set initial data
-            organizationService.addOrganization(new Organization(1, "O001", "Gen Tech", "941 Progress Ave", "M1N2F3",
-                    "aaa@example.com", "http://example.com"));
-            organizationService.addOrganization(new Organization(2, "O002", "Progig", "18 Huron Ave", "A1B2C3",
+            organizationService.addOrganization(new Organization(1, "Gen Tech", "941 Progress Ave", "M1N2F3",
+                    "123-456-7890", "aaa@example.com", "http://example.com"));
+            organizationService.addOrganization(new Organization(2, "Progig", "18 Huron Ave", "A1B2C3", "123-456-7891",
                     "bbb@example.com", "http://example.com"));
-            organizationService.addOrganization(new Organization(3, "O003", "Wemleath", "66 Richmond St", "G1E2Q3",
-                    "ccc@example.com", "http://example.com"));
+            organizationService.addOrganization(new Organization(3, "Wemleath", "66 Richmond St", "G1E2Q3",
+                    "123-456-7892", "ccc@example.com", "http://example.com"));
         };
     }
     
